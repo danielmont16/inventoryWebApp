@@ -1,0 +1,49 @@
+<div class="container_edit_product">
+  <div class="edit_product_title">
+    <h1>
+      {{title}}
+    </h1>
+  </div>
+  <div class="form_edit_product mt-4">
+    <form method="POST">
+      {{! Input names have to match the name of the fields in the mongo schema object }}
+      {{! Mapping is not automatic, but it's best practices }}
+      <fieldset>
+        <label for="code" class="col-2">
+          Code:
+        </label>
+        <input name="code" id="code" required value="{{product.code}}" />
+      </fieldset>
+      <fieldset>
+        <label for="name" class="col-2">
+          Name:
+        </label>
+        <input name="name" id="code" required value="{{product.name}}" />
+      </fieldset>
+
+      <fieldset>
+        <label for="quantity" class="col-2">
+          Quantity:
+        </label>
+        <input name="quantity" id="quantity" required value="{{product.quantity}}" />
+      </fieldset>
+
+      <fieldset>
+        <label for="unit" class="col-2">
+          Unit:
+        </label>
+        <input name="unit" id="unit" required value="{{product.unit}}" />
+      </fieldset>
+
+      <fieldset>
+        <label for="creationDate" class="col-2">
+          Creation Date:
+        </label>
+        <input name="creationDate" id="creationDate" type="date" required value="{{toShortDate product.creationDate}}" />
+      </fieldset>
+        <button class="btn btn-warning mt-2">
+          Save
+        </button>
+      </form>
+  </div>
+</div>

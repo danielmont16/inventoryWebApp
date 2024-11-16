@@ -1,0 +1,65 @@
+<h1>
+  {{title}}
+</h1>
+
+{{!-- To Show data --}}
+<div class="container_products">
+  <div class="products_table">
+    {{!-- if user is logged the screen shows Inventory management, and the user can create, read, update and delete
+    information --}}
+    {{#if user}}
+    <h1>Inventory Management</h1>
+    <a href="/products/add"><i class="fa fa-plus-square" aria-hidden="true"></i> Add a new product</a>
+
+    <table class="table  table-bordered table-hover">
+      <thead>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        {{#each dataset}}
+        <tr>
+          <td>{{this.code}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.quantity}}</td>
+          <td>{{this.unit}}</td>
+
+          <td class="table-warning">
+            <a href="/products/edit/{{this._id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a href="/products/delete/{{this._id}}" onclick="return confirmDeletion()"><i class="fa fa-trash "
+                aria-hidden="true"></i></a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    {{!-- if user is not logged the screen shows Inventory view and the user just can read the information --}}
+    {{else}}
+    <h1>Inventory View</h1>
+    <table class="table  table-bordered table-hover">
+      <thead>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit</th>
+      </thead>
+      <tbody>
+        {{#each dataset}}
+        <tr>
+          <td>{{this.code}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.quantity}}</td>
+          <td>{{this.unit}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{/if}}
+
+  </div>
+
+</div>

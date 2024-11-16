@@ -1,0 +1,48 @@
+<div class="container_add_product">
+
+  <div class="products_title">
+    <h1>
+      {{title}}
+    </h1>
+  </div>
+
+  <div class="form_add_product mt-4">
+
+    <form method="POST">
+      <fieldset>
+        <label for="code" class="col-2">
+          Code:
+        </label>
+        <input name="code" id="code" required />
+      </fieldset>
+      <fieldset>
+        <label for="name" class="col-2">
+          Name:
+        </label>
+        <input name="name" id="name" required />
+      </fieldset>
+      <fieldset>
+        <label for="quantity" class="col-2">
+          Quantity:
+        </label>
+        <input name="quantity" id="quantity" required />
+      </fieldset>
+      <fieldset>
+        <label for="unit" class="col-2">
+          Unit:
+        </label>
+        <input name="unit" id="unit" required value="UN" />
+      </fieldset>
+      <fieldset>
+        <label for="creationDate" class="col-2">
+          Creation date:
+        </label>
+        <input name="creationDate" id="creationDate" type="date" value="{{creationDate}}" />
+       </fieldset>
+      <button class="btn btn-secondary mt-4">
+        Save
+      </button>
+      
+    </form>
+  </div>
+</div>
