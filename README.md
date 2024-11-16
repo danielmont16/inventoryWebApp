@@ -14,13 +14,13 @@
 
 - Clone this repository
 - In the main root, create a .env file and provide the following information:
-    DB_CONNECT=<connection with database>
-    GITHUB_CLIENT_ID=<your client Id>
-    GITHUB_CLIENT_SECRET=<your client Secret>
-    GITHUB_CALLBACK_URL=<your callback url>
-    GOOGLE_CLIENT_ID=<your client Id>
-    GOOGLE_CLIENT_SECRET=<your client secrert>
-    GOOGLE_CALLBACK_URL=<your callback url>
+    - DB_CONNECT="connection with database"
+    - GITHUB_CLIENT_ID="your client Id"
+    - GITHUB_CLIENT_SECRET="your client Secret"
+    - GITHUB_CALLBACK_URL="your callback url"
+    - GOOGLE_CLIENT_ID="your client Id"
+    - GOOGLE_CLIENT_SECRET="your client secrert"
+    - GOOGLE_CALLBACK_URL="your callback url"
 - Run npm i
 - Run npm start
 
@@ -34,7 +34,7 @@
    - This route handles all the CRUD operations with the DataBase.
    - To perform all the operations, the following Mongoose methods were used. save(), .find(), .findByIdAndUpdate(), and .findByIdAndDelete().
 
-### Part 2 Access Control
+### Part 3 Access Control
 
 - The application allows the user to log in either using their GitHub/Google account or locally.
 - If the user is not logged in, the information will be displayed in read mode.
